@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoàn Yên Bình - Personal Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                        },
+                        cream: '#fffaf5',
+                        softbg: '#fcf8f6'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Segoe UI', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcf8f6; color: #4a403a; }
+        .font-serif-custom { font-family: 'Playfair Display', serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 228, 230, 0.6);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-rose-200 selection:text-rose-900 flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-card transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif-custom text-xl font-bold tracking-tight text-rose-900 hover:text-rose-600 transition">
+                Yên Bình<span class="text-rose-400">.</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+                <a href="#about" class="hover:text-rose-500 transition">Giới thiệu</a>
+                <a href="#skills" class="hover:text-rose-500 transition">Kỹ năng & Sở thích</a>
+                <a href="#crochet" class="hover:text-rose-500 transition">Góc Móc Len</a>
+                <a href="#banking" class="hover:text-rose-500 transition">Ủng hộ / QR</a>
+                <a href="#contact" class="hover:text-rose-500 transition">Liên hệ</a>
+            </nav>
+            <a href="https://zalo.me/0394414866" target="_blank" class="bg-rose-400 hover:bg-rose-500 text-white px-5 py-2 rounded-full text-sm font-medium shadow-sm hover:shadow transition-all flex items-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i> Zalo me
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="about" class="max-w-5xl mx-auto px-6 pt-12 pb-20 md:py-24 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-100/70 border border-rose-200 text-rose-700 text-xs font-semibold tracking-wide uppercase">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Chào mừng tới trang cá nhân
+                </div>
+                <h1 class="font-serif-custom text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 leading-tight">
+                    Đoàn Yên Bình
+                </h1>
+                <p class="text-stone-600 text-base md:text-lg leading-relaxed">
+                    Học sinh lớp <span class="font-semibold text-rose-600">11 Lý</span> tại Trường THPT Chuyên Bến Tre. Một cô gái yêu thích phong cách tối giản, hòa đồng và có niềm đam mê đặc biệt với nghệ thuật móc len thủ công.
+                </p>
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                    <a href="https://facebook.com/yen.binh.oan" target="_blank" class="bg-stone-900 hover:bg-stone-800 text-white px-6 py-3 rounded-2xl text-sm font-medium shadow-md transition flex items-center gap-2">
+                        <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
+                    </a>
+                    <a href="#contact" class="border border-rose-200 hover:border-rose-300 bg-white hover:bg-rose-50 text-stone-700 px-6 py-3 rounded-2xl text-sm font-medium transition flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i> 0394 414 866
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-rose-300 to-amber-200 rounded-3xl blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
+                    <div class="relative bg-white p-3 rounded-3xl shadow-xl">
+                        <img src="YOUR_BASE64_OR_IMAGE_URL_HERE" alt="Đoàn Yên Bình" class="w-72 h-96 object-cover rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QR Code Section -->
+        <section id="banking" class="py-16 bg-gradient-to-b from-rose-50/50 to-white">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+                <div class="space-y-2">
+                    <h2 class="font-serif-custom text-3xl font-bold text-stone-800">Thông tin chuyển tiền / QR Code</h2>
+                    <p class="text-stone-500 text-sm">Vị trí chừa sẵn để chèn ảnh mã QR sau</p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-64 h-80 sm:w-72 sm:h-96 border-2 border-dashed border-rose-300 rounded-3xl flex flex-col items-center justify-center bg-rose-50/30 p-6 text-rose-400">
+                        <i data-lucide="qr-code" class="w-16 h-16 stroke-1 mb-3"></i>
+                        <span class="text-sm font-medium text-stone-600">Khung ảnh mã QR</span>
+                        <span class="text-xs text-stone-400 mt-1">Thay thẻ div này bằng thẻ img QR của bạn</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 text-center py-6 text-sm">
+        <p>© Đoàn Yên Bình - THPT Chuyên Bến Tre</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
