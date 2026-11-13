@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đoàn Yên Bình - Personal Website</title>
+    <title>Đoàn Yên Bình - Portfolio Personal Website</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
+                        rose: {
                             50: '#fff1f2',
                             100: '#ffe4e6',
                             200: '#fecdd3',
@@ -20,110 +27,578 @@
                             500: '#f43f5e',
                             600: '#e11d48',
                         },
-                        cream: '#fffaf5',
-                        softbg: '#fcf8f6'
+                        cream: '#FFFDF9',
+                        softBeige: '#F7F3EE',
+                        pastelPink: '#FCE7F0',
+                        roseGold: '#D48C94',
+                        accentDusty: '#C97A85',
+                        darkText: '#3B2F2F',
+                        mutedText: '#6E5D5D'
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Segoe UI', 'sans-serif'],
-                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts & Lucide Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcf8f6; color: #4a403a; }
-        .font-serif-custom { font-family: 'Playfair Display', serif; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFFDF9;
+            color: #3B2F2F;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 228, 230, 0.6);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(253, 164, 175, 0.25);
+        }
+        .glass-nav {
+            background: rgba(255, 253, 249, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .cute-gradient {
+            background: linear-gradient(135deg, #FFE4E6 0%, #FCE7F0 50%, #FFFDF9 100%);
+        }
+        .badge-soft {
+            background-color: rgba(253, 164, 175, 0.15);
+            color: #C97A85;
+        }
+        /* Sparkle float animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-rose-200 selection:text-rose-900 flex flex-col min-h-screen">
+<body class="antialiased selection:bg-rose-200 selection:text-rose-700">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 glass-card transition-all duration-300">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-serif-custom text-xl font-bold tracking-tight text-rose-900 hover:text-rose-600 transition">
-                Yên Bình<span class="text-rose-400">.</span>
-            </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
-                <a href="#about" class="hover:text-rose-500 transition">Giới thiệu</a>
-                <a href="#skills" class="hover:text-rose-500 transition">Kỹ năng & Sở thích</a>
-                <a href="#crochet" class="hover:text-rose-500 transition">Góc Móc Len</a>
-                <a href="#banking" class="hover:text-rose-500 transition">Ủng hộ / QR</a>
-                <a href="#contact" class="hover:text-rose-500 transition">Liên hệ</a>
-            </nav>
-            <a href="https://zalo.me/0394414866" target="_blank" class="bg-rose-400 hover:bg-rose-500 text-white px-5 py-2 rounded-full text-sm font-medium shadow-sm hover:shadow transition-all flex items-center gap-2">
-                <i data-lucide="message-circle" class="w-4 h-4"></i> Zalo me
-            </a>
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-rose-100/60 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo / Name -->
+                <a href="#hero" class="group flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-full bg-rose-200 text-rose-600 flex items-center justify-center font-playfair font-bold text-lg group-hover:scale-110 transition-transform">
+                        Y
+                    </span>
+                    <span class="font-playfair font-bold text-lg sm:text-xl tracking-tight text-darkText">
+                        Yên Bình<span class="text-accentDusty">.</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mutedText">
+                    <a href="#about" class="hover:text-accentDusty transition-colors">Giới thiệu</a>
+                    <a href="#skills" class="hover:text-accentDusty transition-colors">Kỹ năng &amp; Sở thích</a>
+                    <a href="#crochet" class="hover:text-accentDusty transition-colors">Góc Móc Len ✨</a>
+                    <a href="#banking" class="hover:text-accentDusty transition-colors">Mã QR</a>
+                    <a href="#contact" class="hover:text-accentDusty transition-colors">Liên hệ</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://zalo.me/0394414866" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 bg-accentDusty hover:bg-rose-500 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full transition-all shadow-md hover:shadow-rose-200">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Nhắn Zalo</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-mutedText hover:text-darkText hover:bg-rose-50 transition-colors" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cream/95 border-b border-rose-100 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-lg text-base font-medium text-darkText hover:bg-rose-50 hover:text-accentDusty">Giới thiệu</a>
+            <a href="#skills" class="block px-3 py-2 rounded-lg text-base font-medium text-darkText hover:bg-rose-50 hover:text-accentDusty">Kỹ năng &amp; Sở thích</a>
+            <a href="#crochet" class="block px-3 py-2 rounded-lg text-base font-medium text-darkText hover:bg-rose-50 hover:text-accentDusty">Góc Móc Len ✨</a>
+            <a href="#banking" class="block px-3 py-2 rounded-lg text-base font-medium text-darkText hover:bg-rose-50 hover:text-accentDusty">Mã QR Thanh Toán</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-darkText hover:bg-rose-50 hover:text-accentDusty">Liên hệ</a>
+            <div class="pt-2">
+                <a href="https://zalo.me/0394414866" target="_blank" class="w-full text-center block bg-accentDusty text-white font-semibold py-2.5 rounded-full">
+                    Nhắn Zalo Ngay
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="about" class="max-w-5xl mx-auto px-6 pt-12 pb-20 md:py-24 flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-100/70 border border-rose-200 text-rose-700 text-xs font-semibold tracking-wide uppercase">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Chào mừng tới trang cá nhân
-                </div>
-                <h1 class="font-serif-custom text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 leading-tight">
-                    Đoàn Yên Bình
-                </h1>
-                <p class="text-stone-600 text-base md:text-lg leading-relaxed">
-                    Học sinh lớp <span class="font-semibold text-rose-600">11 Lý</span> tại Trường THPT Chuyên Bến Tre. Một cô gái yêu thích phong cách tối giản, hòa đồng và có niềm đam mê đặc biệt với nghệ thuật móc len thủ công.
-                </p>
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-                    <a href="https://facebook.com/yen.binh.oan" target="_blank" class="bg-stone-900 hover:bg-stone-800 text-white px-6 py-3 rounded-2xl text-sm font-medium shadow-md transition flex items-center gap-2">
-                        <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
-                    </a>
-                    <a href="#contact" class="border border-rose-200 hover:border-rose-300 bg-white hover:bg-rose-50 text-stone-700 px-6 py-3 rounded-2xl text-sm font-medium transition flex items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i> 0394 414 866
-                    </a>
+    <!-- Main Content Wrapper -->
+    <main class="pt-20 sm:pt-24">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative overflow-hidden py-12 sm:py-20 lg:py-28 cute-gradient">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Text Info -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-soft text-xs sm:text-sm font-semibold mb-6">
+                            <span class="w-2 h-2 rounded-full bg-accentDusty animate-ping"></span>
+                            <span>Xin chào bạn đến với góc nhỏ của tớ 🌿</span>
+                        </div>
+                        
+                        <h1 class="font-playfair text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-darkText leading-tight mb-4">
+                            <span class="italic text-accentDusty font-normal">Đoàn Yên Bình</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-mutedText leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
+                            Học sinh <strong class="text-darkText font-semibold">Lớp 11 Lý</strong> tại <span class="text-darkText font-semibold">Trường THPT Chuyên Bến Tre</span> 🏫. Một cô gái yêu sự nhẹ nhàng, hòa đồng và gửi gắm tâm tư vào từng mũi móc len handmade.
+                        </p>
+
+                        <!-- Quick Badges -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-8">
+                            <span class="px-3 py-1.5 bg-white/80 rounded-full border border-rose-100 text-xs sm:text-sm text-mutedText shadow-sm">
+                                📍 Bến Tre
+                            </span>
+                            <span class="px-3 py-1.5 bg-white/80 rounded-full border border-rose-100 text-xs sm:text-sm text-mutedText shadow-sm">
+                                🌸 Phong cách Tối giản &amp; Hiện đại
+                            </span>
+                            <span class="px-3 py-1.5 bg-white/80 rounded-full border border-rose-100 text-xs sm:text-sm text-mutedText shadow-sm">
+                                🧶 Đam mê Crocheting
+                            </span>
+                        </div>
+
+                        <!-- Hero CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://facebook.com/yen.binh.oan" target="_blank" rel="noopener noreferrer" 
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-darkText hover:bg-black text-white px-7 py-3.5 rounded-full font-medium transition-all shadow-md hover:-translate-y-0.5">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                                <span>Kết nối Facebook</span>
+                            </a>
+                            <a href="#crochet" 
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-rose-50 text-darkText border border-rose-200 px-7 py-3.5 rounded-full font-medium transition-all shadow-sm">
+                                <i class="fa-solid fa-heart text-accentDusty"></i>
+                                <span>Xem đồ tớ móc</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Avatar Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                            <!-- Outer Decorative Rings -->
+                            <div class="absolute inset-0 rounded-full border-2 border-dashed border-rose-300 animate-spin" style="animation-duration: 35s;"></div>
+                            <div class="absolute -inset-3 rounded-full bg-rose-200/40 blur-xl"></div>
+                            
+                            <!-- Main Avatar Frame -->
+                            <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-br from-rose-100 to-pastelPink flex items-center justify-center">
+                                <img src="input_file_0.png" 
+                                     alt="Đoàn Yên Bình Avatar" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/FCE7F0/C97A85?text=Y%C3%AAn+B%C3%ACnh';" />
+                            </div>
+
+                            <!-- Floating Badge Tag -->
+                            <div class="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-0 bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-2xl shadow-lg border border-rose-100 flex items-center gap-3 animate-float">
+                                <div class="w-9 h-9 rounded-full bg-pastelPink text-accentDusty flex items-center justify-center text-lg">
+                                    🧶
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-xs text-mutedText">Sở thích đặc biệt</p>
+                                    <p class="text-xs font-bold text-darkText">Móc len Handmade</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            
-            <div class="w-full md:w-1/2 flex justify-center">
-                <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-rose-300 to-amber-200 rounded-3xl blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
-                    <div class="relative bg-white p-3 rounded-3xl shadow-xl">
-                        <img src="YOUR_BASE64_OR_IMAGE_URL_HERE" alt="Đoàn Yên Bình" class="w-72 h-96 object-cover rounded-2xl">
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-16 sm:py-24 bg-cream">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <h2 class="text-xs font-bold tracking-widest text-accentDusty uppercase mb-2">Đôi nét về tớ</h2>
+                    <p class="font-playfair text-3xl sm:text-4xl font-bold text-darkText">Thân thiện, Hòa đồng &amp; Tinh tế</p>
+                    <div class="w-12 h-1 bg-accentDusty mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                    
+                    <!-- Card 1: Bản thân -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-100/50">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-darkText mb-3">Học vấn &amp; Quê hương</h3>
+                        <p class="text-sm text-mutedText leading-relaxed">
+                            Hiện đang là học sinh chuyên Lý tại trường <strong>THPT Chuyên Bến Tre</strong>. Đang sinh sống và gắn bó với vùng đất xứ Dừa Bến Tre bình yên, hiền hòa.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Tính cách -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-100/50">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-darkText mb-3">Tính cách giao tiếp</h3>
+                        <p class="text-sm text-mutedText leading-relaxed">
+                            Rất thích trò chuyện, chia sẻ và lắng nghe mọi người xung quanh. Tính cách tự nhiên hòa đồng, luôn mang lại năng lượng tích cực và thân thiện cho bạn bè.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Phong cách -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-100/50">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-darkText mb-3">Phong cách sống</h3>
+                        <p class="text-sm text-mutedText leading-relaxed">
+                            Hướng đến phong cách <strong>tối giản, hiện đại và chuyên nghiệp</strong>. Tỉ mỉ trong từng công việc nhỏ và luôn trân trọng cái đẹp chỉn chu.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & HOBBIES SECTION -->
+        <section id="skills" class="py-16 sm:py-24 bg-softBeige relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left: Skills list -->
+                    <div class="lg:col-span-6">
+                        <h2 class="text-xs font-bold tracking-widest text-accentDusty uppercase mb-2">Thế mạnh cá nhân</h2>
+                        <h3 class="font-playfair text-3xl sm:text-4xl font-bold text-darkText mb-6">Kỹ năng &amp; Điểm nổi bật</h3>
+                        <p class="text-sm sm:text-base text-mutedText mb-8">
+                            Dù học Chuyên Lý với tính logic, tớ vẫn luôn dành cho bản thân sự nhẹ nhàng thông qua nghệ thuật thủ công và kỹ năng kết nối con người.
+                        </p>
+
+                        <div class="space-y-6">
+                            <!-- Skill 1 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-semibold text-darkText"><i class="fa-solid fa-users text-rose-400 mr-2"></i> Kỹ năng giao tiếp &amp; Hòa đồng</span>
+                                    <span class="text-xs font-bold text-accentDusty">95%</span>
+                                </div>
+                                <div class="w-full bg-white h-2.5 rounded-full overflow-hidden p-0.5 border border-rose-100">
+                                    <div class="bg-gradient-to-r from-rose-300 to-accentDusty h-full rounded-full w-[95%]"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 2 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-semibold text-darkText"><i class="fa-solid fa-heart text-rose-400 mr-2"></i> Khả năng Móc len Handmade</span>
+                                    <span class="text-xs font-bold text-accentDusty">90%</span>
+                                </div>
+                                <div class="w-full bg-white h-2.5 rounded-full overflow-hidden p-0.5 border border-rose-100">
+                                    <div class="bg-gradient-to-r from-rose-300 to-accentDusty h-full rounded-full w-[90%]"></div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 3 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-semibold text-darkText"><i class="fa-solid fa-lightbulb text-rose-400 mr-2"></i> Sáng tạo &amp; Tỉ mỉ</span>
+                                    <span class="text-xs font-bold text-accentDusty">88%</span>
+                                </div>
+                                <div class="w-full bg-white h-2.5 rounded-full overflow-hidden p-0.5 border border-rose-100">
+                                    <div class="bg-gradient-to-r from-rose-300 to-accentDusty h-full rounded-full w-[88%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Hobbies Cards -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-rose-100">
+                            <h4 class="font-playfair text-xl font-bold text-darkText mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-face-smile text-accentDusty"></i>
+                                <span>Sở thích hàng ngày của Yên Bình</span>
+                            </h4>
+
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-pastelPink/50 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white text-accentDusty flex items-center justify-center text-xl shadow-sm shrink-0">
+                                        🧶
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-sm text-darkText">Đan / Móc len</h5>
+                                        <p class="text-xs text-mutedText">Dành thời gian rảnh làm những món quà nhỏ nhắn đáng yêu.</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-pastelPink/50 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white text-accentDusty flex items-center justify-center text-xl shadow-sm shrink-0">
+                                        💬
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-sm text-darkText">Nói chuyện với mọi người</h5>
+                                        <p class="text-xs text-mutedText">Tâm sự, giao lưu và học hỏi thêm nhiều trải nghiệm thú vị.</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-pastelPink/50 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white text-accentDusty flex items-center justify-center text-xl shadow-sm shrink-0">
+                                        📱
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-sm text-darkText">Lướt điện thoại &amp; Thư giãn</h5>
+                                        <p class="text-xs text-mutedText">Cập nhật tin tức, xem ý tưởng thiết kế handmade mới trên mạng.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CROCHET SHOWCASE SECTION -->
+        <section id="crochet" class="py-16 sm:py-24 bg-cream">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="px-3 py-1 bg-pastelPink text-accentDusty text-xs font-bold rounded-full uppercase tracking-wider">Góc Sáng Tạo</span>
+                    <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-darkText mt-3">Sản phẩm Móc Len Handmade 🧶</h2>
+                    <p class="text-sm text-mutedText mt-2">Những món đồ dễ thương do chính tay Yên Bình cẩn thận làm nên</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="relative h-60 bg-rose-50 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Thú bông móc len" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Crochet+Toy';" />
+                            <span class="absolute top-4 right-4 bg-white/90 text-accentDusty font-semibold text-xs px-3 py-1 rounded-full shadow-sm">
+                                Yêu thích
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-darkText text-lg mb-1">Gấu Len Nhỏ</h3>
+                            <p class="text-xs text-mutedText leading-relaxed">Móc tỉ mỉ bằng len cotton mềm mịn, thích hợp làm móc khóa hoặc quà tặng xinh xắn.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="relative h-60 bg-rose-50 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Túi xách móc len" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Crochet+Bag';" />
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-darkText text-lg mb-1">Túi Xách Vintage</h3>
+                            <p class="text-xs text-mutedText leading-relaxed">Túi len họa tiết tối giản xinh xắn, phối đồ cực dễ dàng khi đi dạo phố.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="relative h-60 bg-rose-50 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1528821128474-27f963b07760?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Hoa len trang trí" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Crochet+Flower';" />
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-darkText text-lg mb-1">Hoa Len Bất Tử</h3>
+                            <p class="text-xs text-mutedText leading-relaxed">Bông hoa bằng len rực rỡ sắc màu dùng để trang trí bàn học cực sinh động.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- QR Code Section -->
-        <section id="banking" class="py-16 bg-gradient-to-b from-rose-50/50 to-white">
-            <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
-                <div class="space-y-2">
-                    <h2 class="font-serif-custom text-3xl font-bold text-stone-800">Thông tin chuyển tiền / QR Code</h2>
-                    <p class="text-stone-500 text-sm">Vị trí chừa sẵn để chèn ảnh mã QR sau</p>
-                </div>
-                <div class="flex justify-center">
-                    <div class="w-64 h-80 sm:w-72 sm:h-96 border-2 border-dashed border-rose-300 rounded-3xl flex flex-col items-center justify-center bg-rose-50/30 p-6 text-rose-400">
-                        <i data-lucide="qr-code" class="w-16 h-16 stroke-1 mb-3"></i>
-                        <span class="text-sm font-medium text-stone-600">Khung ảnh mã QR</span>
-                        <span class="text-xs text-stone-400 mt-1">Thay thẻ div này bằng thẻ img QR của bạn</span>
+        <!-- BANKING / QR PLACEHOLDER SECTION -->
+        <section id="banking" class="py-16 sm:py-24 bg-softBeige">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl p-6 sm:p-10 border border-rose-100 shadow-lg relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-pastelPink rounded-full blur-2xl"></div>
+
+                    <div class="text-center max-w-xl mx-auto mb-8 relative z-10">
+                        <span class="w-10 h-10 rounded-full bg-rose-100 text-accentDusty inline-flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </span>
+                        <h2 class="font-playfair text-2xl sm:text-3xl font-bold text-darkText">Kênh Thanh Toán &amp; Ủng Hộ</h2>
+                        <p class="text-xs sm:text-sm text-mutedText mt-2">Dành cho bạn bè hoặc người quen muốn đặt móc len hay mời Yên Bình ly trà sữa 🧋</p>
                     </div>
+
+                    <!-- QR Display Box -->
+                    <div class="flex flex-col items-center justify-center relative z-10">
+                        <div class="w-64 h-80 sm:w-72 sm:h-96 border-2 border-dashed border-rose-300 rounded-3xl bg-cream flex flex-col items-center justify-center p-6 text-center shadow-inner hover:border-accentDusty transition-colors group cursor-pointer">
+                            <!-- Placeholder Icon / Image Container -->
+                            <div class="w-20 h-20 rounded-2xl bg-pastelPink text-accentDusty flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-image-circle-plus"></i>
+                            </div>
+                            <h4 class="font-bold text-darkText text-sm mb-1">Vị Trí Mã QR Chuyển Tiền</h4>
+                            <p class="text-xs text-mutedText mb-4">Bạn có thể dễ dàng chèn ảnh mã QR ngân hàng hoặc MoMo vào khung này sau.</p>
+                            <span class="px-3 py-1 bg-white border border-rose-200 rounded-full text-[11px] font-semibold text-accentDusty shadow-sm">
+                                [ Chờ chèn QR của Bình ]
+                            </span>
+                        </div>
+
+                        <!-- Bank Details text list -->
+                        <div class="mt-6 text-center space-y-1">
+                            <p class="text-xs font-semibold text-mutedText">Chủ tài khoản: <strong class="text-darkText uppercase">Đoàn Yên Bình</strong></p>
+                            <p class="text-xs text-mutedText">Số Zalo liên hệ trực tiếp: <span class="font-mono font-bold text-darkText">0394414866</span></p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-16 sm:py-24 bg-cream">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <h2 class="text-xs font-bold tracking-widest text-accentDusty uppercase mb-2">Liên Hệ Với Tớ</h2>
+                    <p class="font-playfair text-3xl sm:text-4xl font-bold text-darkText">Kết Nối Cùng Yên Bình</p>
+                    <p class="text-sm text-mutedText mt-2">Đừng ngần ngại nhắn tin chào tớ một tiếng nhé!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Zalo Card -->
+                    <div class="glass-card p-6 rounded-3xl text-center flex flex-col items-center justify-between border border-rose-100 shadow-sm">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-500 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+                        <h3 class="font-bold text-darkText text-lg mb-1">Zalo</h3>
+                        <p class="text-xs text-mutedText mb-4">Nhắn tin nhanh qua SĐT Zalo</p>
+                        
+                        <div class="w-full bg-white p-3 rounded-2xl border border-rose-100 flex items-center justify-between gap-2 mb-4">
+                            <span class="font-mono text-sm font-semibold text-darkText">0394414866</span>
+                            <button onclick="copyToClipboard('0394414866')" class="text-xs bg-rose-100 hover:bg-rose-200 text-rose-700 font-semibold px-3 py-1.5 rounded-xl transition-colors">
+                                Copy
+                            </button>
+                        </div>
+
+                        <a href="https://zalo.me/0394414866" target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-accentDusty hover:bg-rose-500 text-white font-medium text-xs sm:text-sm py-2.5 rounded-2xl transition-all">
+                            Mở Zalo Ngay
+                        </a>
+                    </div>
+
+                    <!-- Facebook Card -->
+                    <div class="glass-card p-6 rounded-3xl text-center flex flex-col items-center justify-between border border-rose-100 shadow-sm">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <h3 class="font-bold text-darkText text-lg mb-1">Facebook</h3>
+                        <p class="text-xs text-mutedText mb-4">Ghé thăm trang cá nhân Facebook</p>
+                        
+                        <div class="w-full bg-white p-3 rounded-2xl border border-rose-100 mb-4 overflow-hidden text-ellipsis whitespace-nowrap">
+                            <span class="text-xs font-semibold text-darkText">yen.binh.oan</span>
+                        </div>
+
+                        <a href="https://facebook.com/yen.binh.oan" target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs sm:text-sm py-2.5 rounded-2xl transition-all">
+                            Ghé thăm Facebook
+                        </a>
+                    </div>
+
+                    <!-- Address & School Card -->
+                    <div class="glass-card p-6 rounded-3xl text-center flex flex-col items-center justify-between border border-rose-100 shadow-sm">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-accentDusty flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-bold text-darkText text-lg mb-1">Địa Chỉ</h3>
+                        <p class="text-xs text-mutedText mb-4">Học tập &amp; Sinh sống</p>
+                        
+                        <div class="w-full bg-white p-3 rounded-2xl border border-rose-100 mb-4 text-xs text-mutedText space-y-1">
+                            <p><strong class="text-darkText">Trường:</strong> THPT Chuyên Bến Tre</p>
+                            <p><strong class="text-darkText">Tỉnh thành:</strong> Bến Tre, Việt Nam</p>
+                        </div>
+
+                        <div class="w-full bg-pastelPink/60 text-accentDusty font-semibold text-xs py-2.5 rounded-2xl">
+                            📍 Bến Tre, Việt Nam
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-stone-900 text-stone-400 text-center py-6 text-sm">
-        <p>© Đoàn Yên Bình - THPT Chuyên Bến Tre</p>
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-rose-100 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-playfair text-lg font-bold text-darkText mb-2">Đoàn Yên Bình 🌸</p>
+            <p class="text-xs text-mutedText mb-4">Lớp 11 Lý - Trường THPT Chuyên Bến Tre</p>
+            <p class="text-xs text-mutedText/70">&copy; 2026 Đoàn Yên Bình. All rights reserved. Designed with care &amp; elegance.</p>
+        </div>
     </footer>
 
+    <!-- Toast Notification for Copy -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-darkText text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs sm:text-sm">
+        <i class="fa-solid fa-circle-check text-rose-300"></i>
+        <span>Đã sao chép số Zalo thành công!</span>
+    </div>
+
+    <!-- JavaScript Interactions -->
     <script>
-        lucide.createIcons();
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu when link clicked
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast();
+        }
+
+        // Show toast notification
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
     </script>
+
 </body>
 </html>
