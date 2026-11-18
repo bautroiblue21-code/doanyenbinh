@@ -81,14 +81,6 @@
         }
 
         /* Custom Cursor Styles */
-        .custom-cursor {
-            pointer-events: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        }
         .cursor-dot {
             width: 10px;
             height: 10px;
@@ -249,6 +241,9 @@
                             <div class="absolute inset-0 rounded-full border-2 border-dashed border-rose-300 animate-spin" style="animation-duration: 35s;"></div>
                             <div class="absolute -inset-3 rounded-full bg-rose-200/40 blur-xl"></div>
                             
+                            <!-- Hướng dẫn chèn ảnh đại diện trên GitHub:
+                                 1. Tạo thư mục 'images' trong kho lưu trữ GitHub của bạn.
+                                 2. Đưa file ảnh vào và đặt tên là: avatar.jpg (hoặc avatar.png). -->
                             <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-br from-rose-100 to-pastelPink flex items-center justify-center">
                                 <img src="images/avatar.jpg" 
                                      alt="Đoàn Yên Bình Avatar" 
@@ -426,19 +421,26 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Item 1 -->
+                    
+                    <!-- ITEM 1: Đã được chỉnh sửa thành chỗ trống chuẩn để chèn ảnh sản phẩm móc len của bạn -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="relative h-60 bg-rose-50 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=600" 
-                                 alt="Thú bông móc len" 
+                        <div class="relative h-60 bg-gradient-to-br from-rose-50 to-pastelPink/50 overflow-hidden flex items-center justify-center">
+                            
+                            <!-- HƯỚNG DẪN CHÈN ẢNH SẢN PHẨM MÓC LEN LÊN GITHUB:
+                                 1. Đưa file ảnh sản phẩm của bạn vào thư mục 'images/' trên kho GitHub.
+                                 2. Đổi tên file cho dễ quản lý (ví dụ: crochet-1.jpg).
+                                 3. Thay thế dòng src bên dưới thành: src="images/crochet-1.jpg" -->
+                            <img src="images/crochet-1.jpg" 
+                                 alt="Sản phẩm Móc Len Handmade 1" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Crochet+Toy';" />
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Ch%E1%BB%A3+ch%C3%A8n+%E1%BA%A3nh+m%C3%B3c+len';" />
+                            
                             <span class="absolute top-4 right-4 bg-white/90 text-accentDusty font-semibold text-xs px-3 py-1 rounded-full shadow-sm">
-                                Yêu thích
+                                Handmade ✨
                             </span>
                         </div>
                         <div class="p-5">
-                            <h3 class="font-bold text-darkText text-lg mb-1">Gấu Len Nhỏ</h3>
+                            <h3 class="font-bold text-darkText text-lg mb-1">Gấu Bông &amp; Thú Len</h3>
                             <p class="text-xs text-mutedText leading-relaxed">Móc tỉ mỉ bằng len cotton mềm mịn, thích hợp làm móc khóa hoặc quà tặng xinh xắn.</p>
                         </div>
                     </div>
@@ -446,6 +448,7 @@
                     <!-- Item 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
                         <div class="relative h-60 bg-rose-50 overflow-hidden">
+                            <!-- Hướng dẫn chèn ảnh 2: Đặt file vào thư mục images/ và đổi src tương ứng (vd: images/crochet-2.jpg) -->
                             <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=600" 
                                  alt="Túi xách móc len" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -460,6 +463,7 @@
                     <!-- Item 3 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
                         <div class="relative h-60 bg-rose-50 overflow-hidden">
+                            <!-- Hướng dẫn chèn ảnh 3: Đặt file vào thư mục images/ và đổi src tương ứng (vd: images/crochet-3.jpg) -->
                             <img src="https://images.unsplash.com/photo-1528821128474-27f963b07760?auto=format&fit=crop&q=80&w=600" 
                                  alt="Hoa len trang trí" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -491,7 +495,7 @@
                     <!-- QR Display Box -->
                     <div class="flex flex-col items-center justify-center relative z-10">
                         
-                        <!-- Hiển thị ảnh QR từ thư mục images/qr-banking.jpg -->
+                        <!-- Hiển thị ảnh QR từ thư mục images/qr-banking.jpg trên GitHub -->
                         <div class="w-64 h-80 sm:w-72 sm:h-96 border border-rose-200 rounded-3xl bg-white flex flex-col items-center justify-center p-4 text-center shadow-md relative overflow-hidden">
                             <img src="images/qr-banking.jpg" 
                                  alt="Mã QR Chuyển Tiền Đoàn Yên Bình" 
@@ -717,4 +721,3 @@
 
 </body>
 </html>
-```[cite: 4]
