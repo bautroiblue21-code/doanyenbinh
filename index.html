@@ -416,7 +416,7 @@
             </div>
         </section>
 
-        <!-- CROCHET SHOWCASE SECTION (Bố cục ảnh trái, chữ phải theo yêu cầu) -->
+        <!-- CROCHET SHOWCASE SECTION (Hiển thị trọn vẹn ảnh với object-contain) -->
         <section id="crochet" class="py-16 sm:py-24 bg-cream">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-14">
@@ -429,9 +429,9 @@
                 <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-md hover:shadow-xl transition-all duration-300 p-6 sm:p-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         
-                        <!-- Left: Image Box -->
+                        <!-- Left: Image Box (dùng object-contain để hiển thị trọn vẹn 100% không cắt góc) -->
                         <div class="lg:col-span-6">
-                            <div class="relative h-72 sm:h-80 rounded-2xl bg-rose-50 overflow-hidden shadow-inner group">
+                            <div class="relative h-72 sm:h-80 rounded-2xl bg-cream border border-rose-100 overflow-hidden shadow-inner flex items-center justify-center p-2 group">
                                 <!-- ========================================== -->
                                 <!-- CHÚ THÍCH CHÈN ẢNH SẢN PHẨM MÓC LEN TRÊN GITHUB -->
                                 <!-- Hướng dẫn: Đưa ảnh vào thư mục images/ trên GitHub -->
@@ -439,7 +439,7 @@
                                 <!-- ========================================== -->
                                 <img src="images/gaulend.jpg" 
                                      alt="Sản phẩm len handmade Đoàn Yên Bình" 
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                     class="w-full h-full object-contain rounded-xl group-hover:scale-105 transition-transform duration-500"
                                      onerror="this.onerror=null; this.src='https://placehold.co/600x600/FCE7F0/C97A85?text=Chờ+chèn+ảnh+gaulend.jpg';" />
                                 <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-accentDusty font-semibold text-xs px-3 py-1 rounded-full shadow-sm">
                                     ✨ Handmade
@@ -708,4 +708,4 @@
 
 </body>
 </html>
-```[cite: 5, 7]
+```[cite: 5, 8]
