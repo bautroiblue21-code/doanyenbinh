@@ -81,6 +81,14 @@
         }
 
         /* Custom Cursor Styles */
+        .custom-cursor {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
         .cursor-dot {
             width: 10px;
             height: 10px;
@@ -408,57 +416,43 @@
             </div>
         </section>
 
-        <!-- CROCHET SHOWCASE SECTION (Đã chỉnh lại 1 khung nổi bật để chèn ảnh images/gaulend.jpg) -->
+        <!-- CROCHET SHOWCASE SECTION (Đã gộp 3 ô thành 1 ô duy nhất theo yêu cầu) -->
         <section id="crochet" class="py-16 sm:py-24 bg-cream">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <span class="px-3 py-1 bg-pastelPink text-accentDusty text-xs font-bold rounded-full uppercase tracking-wider">Góc Sáng Tạo</span>
                     <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-darkText mt-3">Sản phẩm Móc Len Handmade 🧶</h2>
                     <p class="text-sm text-mutedText mt-3 leading-relaxed">
-                        Mỗi sản phẩm thủ công ra đời là một góc nhỏ tâm huyết và sự tỉ mỉ mà Yên Bình gửi gắm. Từng mũi móc đều chứa đựng sự nâng niu, mong muốn mang lại nét dễ thương, ấm áp và niềm vui nho nhỏ cho những ai yêu mến đồ handmade.
+                        Mỗi một sản phẩm ra đời đều chứa đựng sự tỉ mỉ, tâm huyết và niềm đam mê thủ công của Yên Bình. Đây là không gian trưng bày những tác phẩm len đặc biệt nhất do chính tay tớ nâng niu thực hiện.
                     </p>
                 </div>
 
-                <!-- Showcase Card -->
-                <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-xl">
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                        <!-- Image Box -->
-                        <div class="md:col-span-7">
-                            <div class="relative h-72 sm:h-80 bg-rose-50 rounded-2xl overflow-hidden border border-rose-100 shadow-inner group">
-                                <!-- ========================================== -->
-                                <!-- CHÚ THÍCH CHÈN ẢNH SẢN PHẨM MÓC LEN TRÊN GITHUB -->
-                                <!-- Hướng dẫn: Đưa ảnh vào thư mục images/ trên GitHub -->
-                                <!-- Đặt tên file chính xác là: gaulend.jpg -->
-                                <!-- ========================================== -->
-                                <img src="images/gaulend.jpg" 
-                                     alt="Sản phẩm Móc Len Handmade Yên Bình" 
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Ch%E1%BB%ِd%C3%AAn+gaulend.jpg';" />
-                                <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-accentDusty font-semibold text-xs px-3.5 py-1.5 rounded-full shadow-sm">
-                                    ✨ Handmade with Love
-                                </span >
-                            </div>
-                        </div>
+                <!-- Single Showcase Card -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-md hover:shadow-xl transition-all duration-300 max-w-2xl mx-auto">
+                    
+                    <!-- ========================================== -->
+                    <!-- CHÚ THÍCH CHÈN ẢNH SẢN PHẨM MÓC LEN TRÊN GITHUB -->
+                    <!-- Hướng dẫn: Đưa ảnh sản phẩm vào thư mục images/ trên GitHub -->
+                    <!-- Đổi tên file chính xác thành: gaulend.jpg -->
+                    <!-- ========================================== -->
+                    <div class="relative h-72 sm:h-96 bg-rose-50 overflow-hidden flex items-center justify-center">
+                        <img src="images/gaulend.jpg" 
+                             alt="Sản phẩm Móc Len Handmade Đoàn Yên Bình" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/FCE7F0/C97A85?text=Chờ+chèn+ảnh+gaulend.jpg';" />
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-accentDusty font-semibold text-xs px-3.5 py-1.5 rounded-full shadow-sm">
+                            ✨ Handmade with love
+                        </span>
+                    </div>
 
-                        <!-- Description Box -->
-                        <div class="md:col-span-5 text-center md:text-left space-y-4">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-soft text-xs font-semibold">
-                                <span>Tác phẩm nổi bật</span>
-                            </div>
-                            <h3 class="font-playfair text-2xl sm:text-3xl font-bold text-darkText">Gấu Len &amp; Phụ Kiện Xinh Xắn</h3>
-                            <p class="text-sm text-mutedText leading-relaxed">
-                                Được đan móc cẩn thận từ chất liệu len cotton mềm mại, an toàn và bền màu. Đây là món quà tặng ý nghĩa cho bạn bè hoặc người thân trong các dịp đặc biệt.
-                            </p>
-                            <div class="pt-2">
-                                <a href="https://zalo.me/0394414866" target="_blank" rel="noopener noreferrer" 
-                                   class="inline-flex items-center gap-2 bg-accentDusty hover:bg-rose-500 text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all shadow-md">
-                                    <i class="fa-solid fa-heart"></i>
-                                    <span>Đặt làm sản phẩm riêng</span>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="p-6 sm:p-8 text-center">
+                        <h3 class="font-playfair font-bold text-darkText text-xl sm:text-2xl mb-2">Tác Phẩm Len Độc Bản</h3>
+                        <p class="text-sm text-mutedText leading-relaxed max-w-lg mx-auto">
+                            Được móc hoàn toàn thủ công bằng chất liệu len cotton mềm mại, an toàn và mang phong cách dễ thương, tinh tế. Thích hợp làm quà tặng ý nghĩa hoặc vật phẩm trang trí góc học tập xinh xắn.
+                        </p>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -603,7 +597,6 @@
             cursorDot.style.left = `${mouseX}px`;
             cursorDot.style.top = `${mouseY}px`;
 
-            // Create sparkle trail on move (throttled slightly)
             if (Math.random() < 0.25) {
                 createSparkle(mouseX, mouseY);
             }
@@ -638,7 +631,6 @@
             }, 800);
         }
 
-        // Hover effect for clickable items
         const clickables = document.querySelectorAll('a, button, input');
         clickables.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -669,7 +661,6 @@
             }
         });
 
-        // Close mobile menu when link clicked
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -678,7 +669,6 @@
             });
         });
 
-        // Copy to clipboard function
         function copyToClipboard(text) {
             const tempInput = document.createElement('input');
             tempInput.value = text;
@@ -690,7 +680,6 @@
             showToast();
         }
 
-        // Show toast notification
         function showToast() {
             const toast = document.getElementById('toast');
             toast.classList.remove('translate-y-20', 'opacity-0');
@@ -705,3 +694,4 @@
 
 </body>
 </html>
+```[cite: 5]
