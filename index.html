@@ -241,9 +241,6 @@
                             <div class="absolute inset-0 rounded-full border-2 border-dashed border-rose-300 animate-spin" style="animation-duration: 35s;"></div>
                             <div class="absolute -inset-3 rounded-full bg-rose-200/40 blur-xl"></div>
                             
-                            <!-- Hướng dẫn chèn ảnh đại diện trên GitHub:
-                                 1. Tạo thư mục 'images' trong kho lưu trữ GitHub của bạn.
-                                 2. Đưa file ảnh vào và đặt tên là: avatar.jpg (hoặc avatar.png). -->
                             <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-br from-rose-100 to-pastelPink flex items-center justify-center">
                                 <img src="images/avatar.jpg" 
                                      alt="Đoàn Yên Bình Avatar" 
@@ -411,67 +408,54 @@
             </div>
         </section>
 
-        <!-- CROCHET SHOWCASE SECTION -->
+        <!-- CROCHET SHOWCASE SECTION (Đã chỉnh lại 1 khung nổi bật để chèn ảnh images/gaulend.jpg) -->
         <section id="crochet" class="py-16 sm:py-24 bg-cream">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-14">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
                     <span class="px-3 py-1 bg-pastelPink text-accentDusty text-xs font-bold rounded-full uppercase tracking-wider">Góc Sáng Tạo</span>
                     <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-darkText mt-3">Sản phẩm Móc Len Handmade 🧶</h2>
-                    <p class="text-sm text-mutedText mt-2">Những món đồ dễ thương do chính tay Yên Bình cẩn thận làm nên</p>
+                    <p class="text-sm text-mutedText mt-3 leading-relaxed">
+                        Mỗi sản phẩm thủ công ra đời là một góc nhỏ tâm huyết và sự tỉ mỉ mà Yên Bình gửi gắm. Từng mũi móc đều chứa đựng sự nâng niu, mong muốn mang lại nét dễ thương, ấm áp và niềm vui nho nhỏ cho những ai yêu mến đồ handmade.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <!-- ITEM 1: Đã được chỉnh sửa thành chỗ trống chuẩn để chèn ảnh sản phẩm móc len của bạn -->
-                    <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="relative h-60 bg-gradient-to-br from-rose-50 to-pastelPink/50 overflow-hidden flex items-center justify-center">
-                            
-                            <!-- HƯỚNG DẪN CHÈN ẢNH SẢN PHẨM MÓC LEN LÊN GITHUB:
-                                 1. Đưa file ảnh sản phẩm của bạn vào thư mục 'images/' trên kho GitHub.
-                                 2. Đổi tên file cho dễ quản lý (ví dụ: crochet-1.jpg).
-                                 3. Thay thế dòng src bên dưới thành: src="images/crochet-1.jpg" -->
-                            <img src="images/crochet-1.jpg" 
-                                 alt="Sản phẩm Móc Len Handmade 1" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Ch%E1%BB%A3+ch%C3%A8n+%E1%BA%A3nh+m%C3%B3c+len';" />
-                            
-                            <span class="absolute top-4 right-4 bg-white/90 text-accentDusty font-semibold text-xs px-3 py-1 rounded-full shadow-sm">
-                                Handmade ✨
-                            </span>
+                <!-- Showcase Card -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        <!-- Image Box -->
+                        <div class="md:col-span-7">
+                            <div class="relative h-72 sm:h-80 bg-rose-50 rounded-2xl overflow-hidden border border-rose-100 shadow-inner group">
+                                <!-- ========================================== -->
+                                <!-- CHÚ THÍCH CHÈN ẢNH SẢN PHẨM MÓC LEN TRÊN GITHUB -->
+                                <!-- Hướng dẫn: Đưa ảnh vào thư mục images/ trên GitHub -->
+                                <!-- Đặt tên file chính xác là: gaulend.jpg -->
+                                <!-- ========================================== -->
+                                <img src="images/gaulend.jpg" 
+                                     alt="Sản phẩm Móc Len Handmade Yên Bình" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Ch%E1%BB%ِd%C3%AAn+gaulend.jpg';" />
+                                <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-accentDusty font-semibold text-xs px-3.5 py-1.5 rounded-full shadow-sm">
+                                    ✨ Handmade with Love
+                                </span >
+                            </div>
                         </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-darkText text-lg mb-1">Gấu Bông &amp; Thú Len</h3>
-                            <p class="text-xs text-mutedText leading-relaxed">Móc tỉ mỉ bằng len cotton mềm mịn, thích hợp làm móc khóa hoặc quà tặng xinh xắn.</p>
-                        </div>
-                    </div>
 
-                    <!-- Item 2 -->
-                    <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="relative h-60 bg-rose-50 overflow-hidden">
-                            <!-- Hướng dẫn chèn ảnh 2: Đặt file vào thư mục images/ và đổi src tương ứng (vd: images/crochet-2.jpg) -->
-                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=600" 
-                                 alt="Túi xách móc len" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Crochet+Bag';" />
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-darkText text-lg mb-1">Túi Xách Vintage</h3>
-                            <p class="text-xs text-mutedText leading-relaxed">Túi len họa tiết tối giản xinh xắn, phối đồ cực dễ dàng khi đi dạo phố.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="relative h-60 bg-rose-50 overflow-hidden">
-                            <!-- Hướng dẫn chèn ảnh 3: Đặt file vào thư mục images/ và đổi src tương ứng (vd: images/crochet-3.jpg) -->
-                            <img src="https://images.unsplash.com/photo-1528821128474-27f963b07760?auto=format&fit=crop&q=80&w=600" 
-                                 alt="Hoa len trang trí" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FCE7F0/C97A85?text=Crochet+Flower';" />
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-darkText text-lg mb-1">Hoa Len Bất Tử</h3>
-                            <p class="text-xs text-mutedText leading-relaxed">Bông hoa bằng len rực rỡ sắc màu dùng để trang trí bàn học cực sinh động.</p>
+                        <!-- Description Box -->
+                        <div class="md:col-span-5 text-center md:text-left space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-soft text-xs font-semibold">
+                                <span>Tác phẩm nổi bật</span>
+                            </div>
+                            <h3 class="font-playfair text-2xl sm:text-3xl font-bold text-darkText">Gấu Len &amp; Phụ Kiện Xinh Xắn</h3>
+                            <p class="text-sm text-mutedText leading-relaxed">
+                                Được đan móc cẩn thận từ chất liệu len cotton mềm mại, an toàn và bền màu. Đây là món quà tặng ý nghĩa cho bạn bè hoặc người thân trong các dịp đặc biệt.
+                            </p>
+                            <div class="pt-2">
+                                <a href="https://zalo.me/0394414866" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 bg-accentDusty hover:bg-rose-500 text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all shadow-md">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <span>Đặt làm sản phẩm riêng</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -495,7 +479,7 @@
                     <!-- QR Display Box -->
                     <div class="flex flex-col items-center justify-center relative z-10">
                         
-                        <!-- Hiển thị ảnh QR từ thư mục images/qr-banking.jpg trên GitHub -->
+                        <!-- Hiển thị ảnh QR từ thư mục images/qr-banking.jpg -->
                         <div class="w-64 h-80 sm:w-72 sm:h-96 border border-rose-200 rounded-3xl bg-white flex flex-col items-center justify-center p-4 text-center shadow-md relative overflow-hidden">
                             <img src="images/qr-banking.jpg" 
                                  alt="Mã QR Chuyển Tiền Đoàn Yên Bình" 
