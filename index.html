@@ -187,33 +187,23 @@
                         </div>
                     </div>
 
-                    <!-- Hero Avatar Card (ĐÃ CHỪA CHỖ ẢNH ĐẠI DIỆN) -->
+                    <!-- Hero Avatar Card -->
                     <div class="lg:col-span-5 flex justify-center">
                         <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                             <!-- Outer Decorative Rings -->
                             <div class="absolute inset-0 rounded-full border-2 border-dashed border-rose-300 animate-spin" style="animation-duration: 35s;"></div>
                             <div class="absolute -inset-3 rounded-full bg-rose-200/40 blur-xl"></div>
                             
-                            <!-- Main Avatar Frame -->
-                            <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-br from-rose-100 to-pastelPink flex flex-col items-center justify-center p-6 text-center">
-                                <!-- Chú thích vị trí ảnh đại diện: Bạn hãy thay src="duong-dan-anh-cua-ban.jpg" bằng file ảnh của bạn lên GitHub repository -->
-                                <img src="" 
-                                     alt="Ảnh đại diện của Đoàn Yên Bình" 
-                                     class="w-full h-full object-cover absolute inset-0 hidden" 
-                                     id="avatarImage"
-                                     onload="this.classList.remove('hidden'); document.getElementById('avatarPlaceholder').style.display='none';" />
-                                
-                                <div id="avatarPlaceholder" class="flex flex-col items-center justify-center z-10 space-y-2">
-                                    <div class="w-16 h-16 rounded-full bg-white/80 text-accentDusty flex items-center justify-center text-2xl shadow-sm">
-                                        <i class="fa-solid fa-camera"></i>
-                                    </div>
-                                    <span class="text-xs font-bold text-darkText bg-white/90 px-3 py-1 rounded-full shadow-sm">
-                                        [ Chờ chèn Ảnh Đại Diện ]
-                                    </span>
-                                    <p class="text-[11px] text-mutedText px-4 leading-tight">
-                                        Up ảnh lên thư mục repo và trỏ link vào thẻ &lt;img&gt; này nhé!
-                                    </p>
-                                </div>
+                            <!-- ========================================== -->
+                            <!-- CHÚ THÍCH CHÈN ẢNH ĐẠI DIỆN (AVATAR) TRÊN GITHUB -->
+                            <!-- Hướng dẫn: Đưa ảnh cá nhân vào thư mục images/ trên GitHub -->
+                            <!-- Đổi tên file thành: avatar.jpg (hoặc avatar.png) -->
+                            <!-- ========================================== -->
+                            <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-br from-rose-100 to-pastelPink flex items-center justify-center">
+                                <img src="images/avatar.jpg" 
+                                     alt="Đoàn Yên Bình Avatar" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/FCE7F0/C97A85?text=Y%C3%AAn+B%C3%ACnh';" />
                             </div>
 
                             <!-- Floating Badge Tag -->
@@ -448,30 +438,30 @@
                         <p class="text-xs sm:text-sm text-mutedText mt-2">Dành cho bạn bè hoặc người quen muốn đặt móc len hay mời Yên Bình ly trà sữa 🧋</p>
                     </div>
 
-                    <!-- QR Display Box (ĐÃ CHỪA CHỖ MÃ QR CHUYỂN TIỀN) -->
+                    <!-- QR Display Box -->
                     <div class="flex flex-col items-center justify-center relative z-10">
-                        <div class="w-64 h-80 sm:w-72 sm:h-96 border-2 border-dashed border-rose-300 rounded-3xl bg-cream flex flex-col items-center justify-center p-6 text-center shadow-inner relative overflow-hidden group">
+                        
+                        <!-- ========================================== -->
+                        <!-- CHÚ THÍCH CHÈN MÃ QR CHUYỂN TIỀN TRÊN GITHUB -->
+                        <!-- Hướng dẫn: Đưa ảnh mã QR vào thư mục images/ trên GitHub -->
+                        <!-- Đổi tên file thành: qr-banking.jpg (hoặc qr-banking.png) -->
+                        <!-- Để hiển thị ảnh thay cho khung placeholder, bạn có thể thay đổi thẻ bên dưới -->
+                        <!-- ========================================== -->
+                        
+                        <div class="w-64 h-80 sm:w-72 sm:h-96 border-2 border-dashed border-rose-300 rounded-3xl bg-cream flex flex-col items-center justify-center p-6 text-center shadow-inner hover:border-accentDusty transition-colors group cursor-pointer relative overflow-hidden">
                             
-                            <!-- Thẻ img chứa QR (Ban đầu ẩn, khi bạn up file và trỏ src sẽ tự hiện lên) -->
-                            <img src="" 
-                                 alt="Mã QR Chuyển Tiền" 
-                                 class="w-full h-full object-contain absolute inset-0 bg-white p-2 hidden" 
-                                 id="qrImage"
-                                 onload="this.classList.remove('hidden'); document.getElementById('qrPlaceholderContent').style.display='none';" />
+                            <!-- Khi có ảnh QR trên GitHub, bạn có thể bỏ comment dòng tag img dưới đây và xóa nội dung placeholder bên trong: -->
+                            <!-- <img src="images/qr-banking.jpg" alt="Mã QR Chuyển Tiền" class="w-full h-full object-contain rounded-2xl"> -->
 
-                            <!-- Khung chú thích placeholder -->
-                            <div id="qrPlaceholderContent" class="flex flex-col items-center justify-center z-10">
-                                <div class="w-20 h-20 rounded-2xl bg-pastelPink text-accentDusty flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-image"></i>
-                                </div>
-                                <h4 class="font-bold text-darkText text-sm mb-1">Vị Trí Mã QR Chuyển Tiền</h4>
-                                <p class="text-xs text-mutedText mb-4 leading-relaxed">
-                                    Tải ảnh QR ngân hàng/MoMo lên thư mục repo (ví dụ: <code class="bg-rose-50 px-1.5 py-0.5 rounded text-rose-600">images/qr-code.png</code>) rồi gắn link vào thẻ img phía trên.
-                                </p>
-                                <span class="px-3 py-1 bg-white border border-rose-200 rounded-full text-[11px] font-semibold text-accentDusty shadow-sm">
-                                    [ Chờ chèn QR của Bình ]
-                                </span>
+                            <!-- Nội dung Placeholder hiện tại (chờ chèn ảnh): -->
+                            <div class="w-20 h-20 rounded-2xl bg-pastelPink text-accentDusty flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-image-circle-plus"></i>
                             </div>
+                            <h4 class="font-bold text-darkText text-sm mb-1">Vị Trí Mã QR Chuyển Tiền</h4>
+                            <p class="text-xs text-mutedText mb-4">Bạn có thể dễ dàng chèn ảnh mã QR ngân hàng hoặc MoMo vào khung này sau.</p>
+                            <span class="px-3 py-1 bg-white border border-rose-200 rounded-full text-[11px] font-semibold text-accentDusty shadow-sm">
+                                [ Chờ chèn QR của Bình ]
+                            </span>
                         </div>
 
                         <!-- Bank Details text list -->
